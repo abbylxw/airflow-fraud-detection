@@ -101,6 +101,10 @@ def print_random_quote():
     return quote
 
 
+def say_farewell():
+    print("Thanks for learning Airflow with me!")
+    return "Goodbye!"
+
 # ============================================================================
 # TASK DEFINITIONS
 # ============================================================================
@@ -140,13 +144,20 @@ end_task = BashOperator(
     dag=dag,
 )
 
+# Task 6: Say farewell
+farewell_task = PythonOperator(
+    task_id = 'farewell',
+    python_callable=say_farewell,
+    dag=dag,
+)
+
 # ============================================================================
 # TASK DEPENDENCIES (Execution Order)
 # ============================================================================
 # This defines the order in which tasks execute
 
 # Method 1: Chain style (readable for linear flow)
-start_task >> welcome_task >> date_task >> quote_task >> end_task
+start_task >> welcome_task >> date_task >> quote_task >> end_task >> farewell_task
 
 # This creates the following flow:
 #
