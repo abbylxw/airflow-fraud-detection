@@ -209,3 +209,5 @@ __marimo__/
 # Docker environment
 .env
 config/airflow.cfg
+config/airflow.cfg
+logs/
