@@ -1,0 +1,16 @@
+transaction_id,amount,merchant,timestamp,risk_score,risk_tier,velocity_flag,merchant_blacklisted,final_fraud_flag
+TXN_001,4634,Walmart,,51.34,HIGH,False,False,False
+TXN_002,8358,Target,,88.58,HIGH,True,False,True
+TXN_003,6350,BestBuy,,68.5,HIGH,False,False,False
+TXN_004,9639,Shell,,101.39,HIGH,False,True,True
+TXN_005,7174,Apple,,81.74,HIGH,True,False,True
+TXN_007,5489,Shell,,59.89,HIGH,False,True,True
+TXN_008,7356,Apple,,83.56,HIGH,True,False,True
+TXN_009,4149,Apple,,51.49,HIGH,True,False,True
+TXN_013,4547,Target,,50.47,HIGH,True,False,True
+TXN_014,5072,Starbucks,,55.72,HIGH,True,True,True
+TXN_015,8316,Target,,88.16,HIGH,True,False,True
+TXN_016,4908,Starbucks,,54.08,HIGH,True,True,True
+TXN_018,7595,BestBuy,,80.95,HIGH,False,False,False
+TXN_019,5612,Starbucks,,61.12,HIGH,True,True,True
+TXN_020,5212,Apple,,62.12,HIGH,True,False,True

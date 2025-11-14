@@ -1,0 +1,4 @@
+transaction_id,amount,merchant,timestamp,risk_score,risk_tier,velocity_flag,merchant_blacklisted,final_fraud_flag
+TXN_006,361,Target,,8.61,LOW,True,False,True
+TXN_012,1124,Target,,16.240000000000002,LOW,True,False,True
+TXN_017,1577,BestBuy,,20.77,LOW,False,False,False
