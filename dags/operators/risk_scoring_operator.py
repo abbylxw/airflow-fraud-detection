@@ -25,6 +25,7 @@ class RiskScoringOperator(BaseOperator):
     
     def __init__(
         self,
+        upstream_task_id: str,
         amount_threshold_high: int = 10000,
         amount_threshold_medium: int = 5000,
         merchant_risk_weight: float = 0.4,
@@ -33,6 +34,7 @@ class RiskScoringOperator(BaseOperator):
         **kwargs
     ):
         super().__init__(**kwargs)
+        self.upstream_task_id = upstream_task_id
         self.amount_threshold_high = amount_threshold_high
         self.amount_threshold_medium = amount_threshold_medium
         self.merchant_risk_weight = merchant_risk_weight
@@ -95,7 +97,7 @@ class RiskScoringOperator(BaseOperator):
         self.log.info(f"   Thresholds: High=${self.amount_threshold_high}, Medium=${self.amount_threshold_medium}")
 
         ti = context['ti']
-        transactions = ti.xcom_pull(task_ids='generate_test_transactions')
+        transactions = ti.xcom_pull(task_ids=self.upstream_task_id)
 
         for txn in transactions:
             amount_risk = self.calculate_amount_risk(txn['amount'])

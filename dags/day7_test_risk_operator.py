@@ -47,7 +47,7 @@ def test_risk_operator():
     
     score_risk = RiskScoringOperator(
         task_id='score_risk',
-        upstream_task_id='generate_test_transactions', 
+        upstream_task_id='generate_test_transactions',
         amount_threshold_high=10000,
         amount_threshold_medium=5000
     )
